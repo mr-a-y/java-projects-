@@ -1,0 +1,31 @@
+INDEX VERSION 1.134
+D:\school\york\6\winter\eecs 4413\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1750632266.index
+\lab5servletQ1B\src\main\java
+D:\school\york\6\winter\eecs 4413\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3450178388.index
+\24w-LT2-Q1-yamany\src\main\java
+D:\school\york\6\winter\eecs 4413\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2428236540.index
+\lab6servletQ1\src\main\java
+D:\school\york\6\winter\eecs 4413\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\455709343.index
+\ lab5servletQ1A\src\main\java
+D:\school\york\6\winter\eecs 4413\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1219741979.index
+\ lab5servletQ1B\src\main\java
+D:\school\york\6\winter\eecs 4413\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2195610152.index
+\lab5servletQ2B\src\main\java
+D:\school\york\6\winter\eecs 4413\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1471468932.index
+\Lab5ServletQ2A\src\main\java
+D:\school\york\6\winter\eecs 4413\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1880329379.index
+\ lab5servletQ1B\src\main\java
+D:\school\york\6\winter\eecs 4413\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1650058307.index
+\24w-LT2-Q1\src\main\java
+D:\school\york\6\winter\eecs 4413\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3019949429.index
+\studentCalc4\src\main\java
+D:\school\york\6\winter\eecs 4413\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3283043791.index
+\lab6servletQ1bb\src\main\java
+D:\school\york\6\winter\eecs 4413\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\207098235.index
+\lab6servletQ2\src\main\java
+D:\school\york\6\winter\eecs 4413\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3532099748.index
+\lab6servletQ1\src\main\java
+D:\school\york\6\winter\eecs 4413\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\568664012.index
+\studentCalc4\src\main\java
+D:\school\york\6\winter\eecs 4413\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\922276569.index
+\lab6servletQ1\src\main\java

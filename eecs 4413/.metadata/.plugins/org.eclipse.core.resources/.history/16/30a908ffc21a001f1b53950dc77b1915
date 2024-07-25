@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="24w-LT2-Q1">
+        <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes/" source-path="/src/main/ImportedClasses"/>
+        <dependent-module archiveName="sqlite-jdbc-3.41.2.1.jar" deploy-path="/WEB-INF/lib/" handle="module:/resource/sqlite-jdbc-3.41.2.1/sqlite-jdbc-3.41.2.1">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="taglibs-standard-spec-1.2.5.jar" deploy-path="/WEB-INF/lib/" handle="module:/resource/taglibs-standard-spec-1.2.5/taglibs-standard-spec-1.2.5">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="taglibs-standard-impl-1.2.5.jar" deploy-path="/WEB-INF/lib/" handle="module:/resource/taglibs-standard-impl-1.2.5/taglibs-standard-impl-1.2.5">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="mysql-connector-java-8.0.27.jar" deploy-path="/WEB-INF/lib/" handle="module:/resource/mysql-connector-java-8.0.27/mysql-connector-java-8.0.27">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <property name="context-root" value="24w-LT2-Q1"/>
+        <property name="java-output-path" value="/24w-LT2-Q1/build/classes"/>
+    </wb-module>
+</project-modules>

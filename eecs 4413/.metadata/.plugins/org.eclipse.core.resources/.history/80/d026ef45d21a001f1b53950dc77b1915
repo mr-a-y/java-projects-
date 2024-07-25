@@ -1,0 +1,145 @@
+package dao;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.servlet.ServletContext;
+
+import model.Category;
+import model.Course;
+
+public class CourseDAOImpl implements CourseDAO {
+
+	
+	static ServletContext context;
+	
+	
+	public CourseDAOImpl (ServletContext cont) {
+	 context = cont;
+	}
+	
+	public CourseDAOImpl () {
+		 ;
+	}
+	
+	static {
+		try {
+			Class.forName("org.sqlite.JDBC");
+		} catch (ClassNotFoundException ex) {
+		}
+	}
+
+	private Connection getConnection() throws SQLException {
+		
+		String absP = context.getRealPath("/lt2_Courses.db"); 
+		return DriverManager.getConnection("jdbc:sqlite:" + absP);
+	}
+
+	private void closeConnection(Connection connection) {
+		if (connection == null)
+			return;
+		try {
+			connection.close();
+		} catch (SQLException ex) {
+		}
+	}
+
+	
+	// find courses of given category, from the database
+	// hint: you may need to do inner join of two tables.
+	  public List<Course> findCoursesByCategory(int categoryID) { 
+		List<Course> result = new ArrayList<Course>(); 
+		
+	
+	  
+	    //. ...
+		try {
+			Connection con =this.getConnection();
+			String sq1 = " SELECT * FROM course WHERE categoryID = "+categoryID+" ";
+			Statement stm =con.prepareStatement(sq1);
+			ResultSet rs = stm.executeQuery(sq1);
+			
+			String sq2 = " SELECT * FROM category WHERE ID = "+categoryID+" ";
+			Statement stm2 =con.prepareStatement(sq1);
+			ResultSet rs2 = stm.executeQuery(sq1);
+			
+			rs2.next();
+			String desc= rs2.getString("description");
+			
+			while(rs.next()) {
+				
+				String code= rs.getString("code");
+				String title= rs.getString("title");
+				String sections= rs.getString("sections");
+				
+				String selectedSection= rs.getString("");
+				
+				
+				Course a = new Course(code,title,categoryID);
+				a.setCategoryDescription(desc);
+				a.setSelectedSection(sections);
+				result.add(a);
+			}
+			
+			
+		} catch (SQLException ex1) {
+			ex1.printStackTrace();
+		} finally {
+			closeConnection(con);
+		}
+		return result;}
+	
+	  
+     //find course of given course code, from the database
+	  Course findCourseByCode(String cod) { 
+		  
+			try {
+				Connection con =this.getConnection();
+				String sq1 = " SELECT * FROM course WHERE code = "+cod+" ";
+				Statement stm =con.prepareStatement(sq1);
+				ResultSet rs = stm.executeQuery(sq1);
+				
+			
+				
+				    rs.next();
+					
+
+					String title= rs.getString("title");
+					String sections= rs.getString("sections");
+					
+					String selectedSection= rs.getString("");
+					
+					
+					int categoryID = rs.getInt("categoryID");
+					Course a = new Course(cod,title,categoryID);
+					
+					String sq2 = " SELECT * FROM category WHERE ID = "+categoryID+" ";
+					Statement stm2 =con.prepareStatement(sq1);
+					ResultSet rs2 = stm.executeQuery(sq1);
+					
+					rs2.next();
+					String desc= rs2.getString("description");
+					
+					
+					a.setCategoryDescription(desc);
+					a.setSelectedSection(sections);
+					
+				
+				return a;
+				}
+			} catch (SQLException ex) {
+				ex1.printStackTrace();
+			} finally {
+				closeConnection(con);
+			}
+			
+		}
+	 
+
+}

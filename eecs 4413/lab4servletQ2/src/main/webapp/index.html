@@ -1,0 +1,35 @@
+<title>Insert title here</title>
+</head>
+<body>
+<form action="MyServlet1" method="post">
+  User Name:<input type="text" name="userName"/><br/><br>
+  Password:<input type="password" name="userPassword"/><br/><br>
+  group: <select name="group">
+         <option value="ugrad"> ugrad
+         <option value="grad"> grad
+         <option value="faculty"> faculty
+         <option value="staff"> staff
+  
+       </select>
+  
+   <p> <span class="fieldName"> Year: </span>
+<input type="radio" name="year" value="1" checked="checked" /> 1
+<input type="radio" name="year" value="2" /> 2
+<input type="radio" name="year" value="3" /> 3
+<input type="radio" name="year" value="4" /> 4
+</p>
+  
+  <p> <span class="fieldName"> Transportation: </span>
+<input type="checkbox" name="hobby" value="TTC"  checked="checked"/> TTC
+<input type="checkbox" name="hobby" value="YRT"  /> YRT
+<input type="checkbox" name="hobby" value="Go bus"/>  Go bus
+<input type="checkbox" name="hobby" value="Go train"/>  Go train
+<input type="checkbox" name="hobby" value="Car"/>  Car
+</p>
+  
+  	
+  <br> 
+  <input type="submit" value="submit"/>
+</form>
+</body>
+</html>

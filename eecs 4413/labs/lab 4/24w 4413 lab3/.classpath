@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="24w 23f 4413 lab3/4413 lab3/part I  RMI/Clientcodes"/>
+	<classpathentry kind="src" path="24w 23f 4413 lab3/4413 lab3/part I  RMI/servercodes"/>
+	<classpathentry kind="src" path="24w 23f 4413 lab3/4413 lab3/part IV serverQ4"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

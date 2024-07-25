@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;lab4servletQ2cookie/src/main/webapp/index.html&apos; to &apos;abc.html&apos;" description="Rename resource &apos;index.html&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/webapp/index.html" name="abc.html" stamp="1714362495914" updateReferences="true"/>
+</session>

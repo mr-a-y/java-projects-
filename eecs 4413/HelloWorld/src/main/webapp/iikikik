@@ -1,0 +1,52 @@
+	if(URL.endsWith("Lab1")) {
+		
+		resOut.write("Hello, World! \n");	
+			
+		String clientIP = request.getRemoteAddr();
+		resOut.write("Client IP:"+clientIP+"\n");
+		
+		int clientPort = request.getServerPort();
+		resOut.write("Client Port :"+clientPort+"\n");
+		
+		
+		if (clientIP.equals("0:0:0:0:0:0:0:1"))	{
+			resOut.write("This IP has been flagged!\n");
+		}
+		
+		String clientProtocol =  request.getProtocol() ;
+		resOut.write("Client Protocol :"+clientProtocol+"\n");
+		
+		
+		String clientMethod =  request.getMethod() ;
+		resOut.write("Client Method: "+clientMethod+"\n");
+		
+		
+		resOut.write("Query String :"+clientQueryString +"\n");
+		
+		String foo =  request.getParameter("foo") ;
+	
+		resOut.write("Query Param foo= "+foo+"\n");
+		
+		
+		
+		resOut.write("Request URI : "+URL+"\n");
+		
+		String ServPath= request.getPathInfo();
+		resOut.write("Request Servlet Path : "+ServPath+"\n");
+		resOut.write("---- Info from context object ---- \n");
+		
+		String contextPath = context.getContextPath() ;
+		String realpath = context.getRealPath("Osap");
+		String appName = context.getInitParameter("applicationName") ;
+		String applicantName = context.getInitParameter("applicantName");
+		String year = context.getInitParameter("calendarYear");
+		
+		
+		resOut.write("Application Name= "+appName+"\n");
+		resOut.write("Context Path= "+contextPath+"\n");
+		resOut.write("Real Path Osap: \n"+realpath+"\n");
+		resOut.write("Applicant Name="+applicantName+"\n");
+		
+	}
+		
+		resOut.write("---- Montly payments ----");

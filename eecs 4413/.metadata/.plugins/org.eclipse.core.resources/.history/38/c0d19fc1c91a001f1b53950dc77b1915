@@ -1,0 +1,86 @@
+package dao;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.servlet.ServletContext;
+
+import model.Category;
+import model.Course;
+
+public class CourseDAOImpl implements CourseDAO {
+
+	
+	static ServletContext context;
+	
+	
+	public CourseDAOImpl (ServletContext cont) {
+	 context = cont;
+	}
+	
+	public CourseDAOImpl () {
+		 ;
+	}
+	
+	static {
+		try {
+			Class.forName("org.sqlite.JDBC");
+		} catch (ClassNotFoundException ex) {
+		}
+	}
+
+	private Connection getConnection() throws SQLException {
+		
+		String absP = context.getRealPath("/lt2_Courses.db"); 
+		return DriverManager.getConnection("jdbc:sqlite:" + absP);
+	}
+
+	private void closeConnection(Connection connection) {
+		if (connection == null)
+			return;
+		try {
+			connection.close();
+		} catch (SQLException ex) {
+		}
+	}
+
+	
+	// find courses of given category, from the database
+	// hint: you may need to do inner join of two tables.
+	  public List<Course> findCoursesByCategory(int categoryID) { 
+		List<Course> result = new ArrayList<Course>(); 
+	  
+	    //. ...
+		try {
+			//.....
+			}
+		} catch (SQLException ex) {
+			ex.printStackTrace();
+		} finally {
+			closeConnection(connection);
+		}
+		return result;
+	}
+	  
+     //find course of given course code, from the database
+	  public Course findCourseByCode(String cod) { 
+		  
+			try {
+				 
+				}
+			} catch (SQLException ex) {
+				ex.printStackTrace();
+			} finally {
+				closeConnection(connection);
+			}
+			
+		}
+	 
+
+}

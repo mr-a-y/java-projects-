@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;Table.java&apos; to &apos;Lab5ServletQ2A&apos;&#x0D;&#x0A;- Original project: &apos;lab5servletQ2Aa&apos;&#x0D;&#x0A;- Destination element: &apos;Lab5ServletQ2A&apos;&#x0D;&#x0A;- Original element: &apos;lab5servletQ2A.Table.java&apos;" description="Copy compilation unit" destination="=Lab5ServletQ2A" element1="/src\/main\/java&lt;lab5servletQ2A{Table.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1715134765734" units="1" version="1.0"/>
+</session>

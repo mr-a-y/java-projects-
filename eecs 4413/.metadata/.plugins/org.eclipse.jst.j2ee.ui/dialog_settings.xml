@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item key="J2EE_EXPORT_OVERWRITE" value="false"/>
+	<item key="J2EE_EXPORT_SOURCE" value="true"/>
+	<list key="MRU_RUNTIME_STORE">
+		<item value="NULL_RUNTIME"/>
+		<item value="apache-tomcat-9.0.82"/>
+	</list>
+	<list key="J2EE_EXPORT_JST_WEB">
+		<item value="D:\school\york\6\winter\eecs 4413\labs\exam\submited\24w-LT2-Q1-yamany.war"/>
+		<item value="D:\school\york\6\winter\eecs 4413\labs\lab 6\submited\lab6servletQ2.war"/>
+		<item value="D:\school\york\6\winter\eecs 4413\labs\lab 6\lab6servletQ1.war"/>
+		<item value="D:\school\york\6\winter\eecs 4413\labs\lab 6\lab5servletQ2B.war"/>
+		<item value="D:\school\york\6\winter\eecs 4413\labs\lab 5\submitted\lab5servletQ2A.war"/>
+		<item value="D:\school\york\6\winter\eecs 4413\labs\lab 5\submitted\lab5servletQ1B.war"/>
+	</list>
+	<list key="J2EE_IMPORT_null">
+		<item value="D:\school\york\6\winter\eecs 4413\labs\exam\24w-LT2-Q1.war"/>
+		<item value="D:\school\york\6\winter\eecs 4413\labs\lab 6\lab6servletQ2.war"/>
+		<item value="C:\Users\alica\Downloads\lt1Q2-univ-24w.war"/>
+	</list>
+	<list key="J2EE_IMPORT_EJB">
+		<item value="D:\school\york\6\winter\eecs 4413\labs\lab 5\taglibs-standard-spec-1.2.5.jar"/>
+		<item value="D:\school\york\6\winter\eecs 4413\labs\lab 5\taglibs-standard-impl-1.2.5.jar"/>
+	</list>
+</section>

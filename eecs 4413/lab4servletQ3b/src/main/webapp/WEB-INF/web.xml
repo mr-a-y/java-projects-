@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+         http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+
+    <!-- Define the Osap servlet -->
+    <servlet>
+        <servlet-name>Osap</servlet-name>
+        <servlet-class>Osap</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Osap</servlet-name>
+        <url-pattern>/Osap</url-pattern>
+    </servlet-mapping>
+
+    <!-- Define the ResultView servlet -->
+    <servlet>
+        <servlet-name>ResultView</servlet-name>
+        <servlet-class>ResultView</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ResultView</servlet-name>
+        <url-pattern>/ResultView</url-pattern>
+    </servlet-mapping>
+
+    <!-- Optional: Specify a welcome file -->
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+    </welcome-file-list>
+
+    <!-- Define context parameters if needed -->
+    <context-param>
+        <param-name>defaultPrincipal</param-name>
+        <param-value>1000</param-value>
+    </context-param>
+    <!-- Add other context parameters here if needed -->
+	<context-param>
+    <param-name>defaultInterest</param-name>
+    <param-value>10.0</param-value>
+	</context-param>
+	
+	<context-param>
+    <param-name>defaultPeriod</param-name>
+    <param-value>12</param-value>
+</context-param>
+
+</web-app>

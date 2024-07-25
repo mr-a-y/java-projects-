@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>It1Q1-yamany</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+  </welcome-file-list>
+  
+  
+   <servlet>
+        <servlet-name>Add</servlet-name>
+        <servlet-class>Add</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Add</servlet-name>
+        <url-pattern>/Add</url-pattern>
+    </servlet-mapping>
+    
+     <servlet>
+        <servlet-name>Show</servlet-name>
+        <servlet-class>Show</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Show</servlet-name>
+        <url-pattern>/Show</url-pattern>
+    </servlet-mapping>
+    
+  
+  
+  
+   <context-param>
+        <param-name>default_a</param-name>
+        <param-value>10</param-value>
+    </context-param>
+    
+    
+   <context-param>
+        <param-name>default_b</param-name>
+        <param-value>12</param-value>
+    </context-param>
+    
+    
+   <context-param>
+        <param-name>default_c</param-name>
+        <param-value>14</param-value>
+    </context-param>
+    
+  
+  
+</web-app>

@@ -1,0 +1,70 @@
+package controller;
+
+import dao.BookDAO;
+import dao.BookDAOImpl;
+import model.Book;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.sql.SQLException;
+import java.util.List;
+
+@WebServlet("/BookController")
+public class BookController extends HttpServlet {
+    private static final long serialVersionUID = 1L;
+    private BookDAO bookDAO;
+
+    public BookController() {
+        this.bookDAO = new BookDAOImpl();
+    }
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String action = request.getParameter("action");
+        try {
+            switch (action) {
+                case "all":
+                    listAllBooks(request, response);
+                    break;
+                case "category":
+                    listBooksByCategory(request, response);
+                    break;
+                case "keyword":
+                    listBooksByKeyword(request, response);
+                    break;
+                default:
+                    listAllBooks(request, response);
+                    break;
+            }
+        } catch (SQLException e) {
+            throw new ServletException(e);
+        }
+    }
+
+    private void listAllBooks(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException {
+        List<Book> listBooks = bookDAO.searchAll();
+        request.setAttribute("listBooks", listBooks);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("list.jsp");
+        dispatcher.forward(request, response);
+    }
+
+    private void listBooksByCategory(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException {
+        String category = request.getParameter("category");
+        List<Book> listBooks = bookDAO.searchByCategory(category);
+        request.setAttribute("listBooks", listBooks);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("list.jsp");
+        dispatcher.forward(request, response);
+    }
+
+    private void listBooksByKeyword(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException {
+        String keyword = request.getParameter("keyword");
+        List<Book> listBooks = bookDAO.searchByKeyword(keyword);
+        request.setAttribute("listBooks", listBooks);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("list.jsp");
+        dispatcher.forward(request, response);
+    }
+}

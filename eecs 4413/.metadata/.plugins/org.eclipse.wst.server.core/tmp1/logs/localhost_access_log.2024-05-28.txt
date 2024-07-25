@@ -1,0 +1,11 @@
+127.0.0.1 - - [28/May/2024:12:45:45 -0400] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [28/May/2024:12:45:46 -0400] "GET /lab6servletQ1/ HTTP/1.1" 200 736
+0:0:0:0:0:0:0:1 - - [28/May/2024:12:45:47 -0400] "GET /favicon.ico HTTP/1.1" 404 762
+0:0:0:0:0:0:0:1 - - [28/May/2024:12:45:55 -0400] "GET /lab6servletQ1/QueryServlet?author=Tan+Ah+Teck&author=Sue+Lee HTTP/1.1" 200 2257
+0:0:0:0:0:0:0:1 - - [28/May/2024:12:46:03 -0400] "GET /lab6servletQ1/CartServlet?id=1&qty_1=6&id=2&qty_2=1&qty_3=1&qty_4=1&todo=add HTTP/1.1" 200 1808
+0:0:0:0:0:0:0:1 - - [28/May/2024:12:46:10 -0400] "GET /lab6servletQ1/index.html HTTP/1.1" 200 736
+0:0:0:0:0:0:0:1 - - [28/May/2024:12:46:12 -0400] "GET /lab6servletQ1/QueryServlet?author=Sue+Lee HTTP/1.1" 200 1500
+0:0:0:0:0:0:0:1 - - [28/May/2024:12:46:18 -0400] "GET /lab6servletQ1/CartServlet?id=1&qty_1=1&qty_2=1&todo=add HTTP/1.1" 200 1808
+0:0:0:0:0:0:0:1 - - [28/May/2024:12:46:24 -0400] "GET /lab6servletQ1/CartServlet?qty_1=9&todo=update&id=1 HTTP/1.1" 200 1808
+0:0:0:0:0:0:0:1 - - [28/May/2024:12:46:25 -0400] "GET /lab6servletQ1/CartServlet?todo=remove&id=1 HTTP/1.1" 200 1329
+0:0:0:0:0:0:0:1 - - [28/May/2024:12:46:32 -0400] "GET /lab6servletQ1/OrderServlet?cust_name=ali+yamany&cust_phone=6477804734&cust_city=Toronto HTTP/1.1" 200 779

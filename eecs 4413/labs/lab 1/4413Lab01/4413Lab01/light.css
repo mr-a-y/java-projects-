@@ -1,0 +1,45 @@
+#box {
+     
+    background-color: rgb(255, 255, 255);
+    padding: 10px; padding-top:0px;
+    width: 300px;
+    border: 5px solid rgb(106, 255, 194);
+}
+
+
+#box button {
+    width: 1000px;
+    padding: 2px;
+}
+
+#off{
+    text-align: center; margin:60px;
+}
+#off button{width:80px;}
+
+#ON1 button {
+    width: 50px; /* Adjusted width to match the "off" button */
+    float: left;
+    margin: 5px;
+}
+#ON2 button {
+    width: 50px; /* Adjusted width to match the "off" button */
+    float: left;
+    margin: 5px;
+}
+#ON3 button {
+    width: 50px; /* Adjusted width to match the "off" button */
+    float: left;
+    margin: 5px;
+}
+#ON4 button {
+    width: 50px; /* Adjusted width to match the "off" button */
+    float: left;
+    margin: 5px;
+}
+#ON5 button {
+    width: 50px; /* Adjusted width to match the "off" button */
+    float: left;
+    margin: 5px;
+}
+#message{ text-align: center;}

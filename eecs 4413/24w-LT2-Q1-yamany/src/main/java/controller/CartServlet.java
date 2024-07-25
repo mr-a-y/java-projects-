@@ -1,0 +1,202 @@
+package controller;
+
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Arrays;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import dao.CourseDAO;
+import dao.CourseDAOImpl;
+import lab5servletQ2A.Book;
+import lab5servletQ2A.Table;
+import model.Cart;
+import model.Course;
+
+/**
+ * Servlet implementation class CartServlet
+ */
+@WebServlet({ "/CartServlet", "/cart" })
+public class CartServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public CartServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		 
+		  response.setContentType("text/html;charset=UTF-8");
+	      PrintWriter out = response.getWriter();
+	      HttpSession session = request.getSession(true);
+	      Cart cart;
+	        synchronized (session) {
+	            cart = (Cart) session.getAttribute("cart");
+	            if (cart == null) {
+	                cart = new Cart();
+	                session.setAttribute("cart", cart);
+	            }
+	        }
+	        CourseDAOImpl courseDAO = new CourseDAOImpl();
+	      
+	      // manipulate so that wishlist is accumulative
+	 
+	       
+	      try {
+	  
+	 
+	         out.println("<html><head><title>Shopping Cart</title></head><body>");
+	         out.println("<h2>Your Wish List</h2>");
+	         
+	         // This servlet handles 3 cases:
+	         // (1) todo=add 
+	         // (2) todo=sort by course code
+	         // (3) todo=sort by category
+	       
+	         String todo = request.getParameter("todo");
+	         
+	         if (todo.equals("add")) {
+	        	 String[] codes = request.getParameterValues("code");
+	        	 if (codes!=null) {
+	        		 for (String cd : codes) {
+	        			 
+	        			 cart.add(courseDAO.findCourseByCode(cd));
+	        			 
+	        			 
+	        		 }
+	        		 
+	        		 
+	        	 }
+
+	            } else if (todo.equals("Sort by Code")) {
+	            	
+	            	cart.sortByCode();
+	            	
+
+	            } else if (todo.equals("Sort by Category")) {
+	               cart.sortByCategory();
+	            }
+
+	         
+	         //.....
+	         
+	        // if todo = add   
+	         //  add to cart
+	        
+	         //  else if todo = Sort by Code
+	          // sort the cart  (sorting methods have been implemented for you)
+	         
+	        //   else if ....todo Sort by Category
+	         
+	         
+	         
+	         // now display
+	        	
+	         // table for 2 sort buttons, so they are on same line
+	            out.println("<table border='0' cellpadding='6'>");
+	        	 out.println("<tr> <td>");
+	        	 
+	        	 out.println("<form method='get'>");
+	             out.println("<input type='hidden' size='3' name='todo' value='Sort by Course code' />");  
+	             out.println("<input type='submit' value='Sort by Course code' />");
+	             out.println("</form>");
+	             
+	             out.println("</td> <td>");
+	             out.println("<form method='get'>");
+	             out.println("<input type='hidden' size='3' name='todo' value='Sort by Category' />"); 
+	             out.println("<input type='submit' value='Sort by Category' />");
+	             out.println("</form>");
+	             out.println("</td> </tr> </table>");
+	        	 
+	        	 
+	        	 out.println("<table border='1' cellpadding='12'>");
+	            out.println("<tr>");
+	            out.println("<th>COURSE CODE</th>");
+	            
+	            out.println("<th>COURSE TITLE</th>");
+	            out.println("<th>CATEGORY</th>");
+	        
+	            
+	            // display current wish list row by row
+	            //....
+	            
+                for(Course e: cart.getItems()) {
+                    // Print each row with a checkbox identified by course's id
+                   String code = e.getCode();
+                   out.println("<tr>");
+                   out.println("<td><input type='checkbox'  name='code' value='" + code + "' /></td>");
+                    
+                   out.println("<td>" + e.getCode() + "</td>");                    
+					
+                    out.println("<td>" + e.getTitle() + "</td>");
+                    out.println("<td>" + e.getCategoryDescription() + "</td>");
+                  
+                    
+                    out.println("</tr>");
+                 }
+	            
+	               
+	            
+	           
+	            out.println("</table>");
+	            
+	        
+	 
+	         out.println("<p><a href='Welcome.html'>Select More courses..</a></p>");
+	 
+	         // Display the Checkout
+	         
+	            out.println("<br />");
+	            out.println("<form method='get' action='checkout'>");
+	            out.println("<input type='submit' value='CHECK OUT'>");
+
+	           
+	            
+	            out.println("</form>");
+	          
+	 
+	         out.println("</body></html>");
+	         
+	         
+	         
+	 
+	      } catch (Exception ex) {//catch (SQLException ex) {
+	         out.println("<h3>Service not available. Please try again later!</h3></body></html>");
+	         System.out.println(ex);
+	         
+	      } finally {
+	         out.close();
+	         
+	         
+	      }
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}
